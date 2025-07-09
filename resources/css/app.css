@@ -1,0 +1,961 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #000000 100%);
+        min-height: 100vh;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer components {
+    /* Login & Authentication Styles */
+    .login-card {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        max-width: 900px;
+        width: 100%;
+        display: flex;
+        min-height: 500px;
+    }
+
+    .logo-panel {
+        flex: 1;
+        background: white url('/assets/lindela-logo-brand-dark.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+        color: #d97706;
+    }
+
+    .logo-overlay {
+        position: absolute;
+        inset: 0;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .quote-text {
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.3;
+        text-align: center;
+        margin-top: 2rem;
+        text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8);
+        color: #d97706;
+        filter: contrast(1.2);
+    }
+
+    .subtitle-text {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+        color: #92400e;
+        font-weight: 600;
+        text-shadow: 0 1px 5px rgba(255, 255, 255, 0.8);
+        filter: contrast(1.3);
+    }
+
+    .login-panel {
+        flex: 1;
+        background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #fbbf24;
+        position: relative;
+    }
+
+    .login-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .company-title {
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        border: 2px solid #fbbf24;
+        padding: 0.75rem 1.5rem;
+        display: inline-block;
+        margin-bottom: 1rem;
+        color: #fbbf24;
+    }
+
+    .system-subtitle {
+        font-size: 0.9rem;
+        color: #d97706;
+        font-weight: 500;
+        margin-bottom: 2rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+        position: relative;
+    }
+
+    .input-icon {
+        position: absolute;
+        left: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(251, 191, 36, 0.7);
+    }
+
+    .password-toggle {
+        position: absolute;
+        right: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(251, 191, 36, 0.7);
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .password-toggle:hover {
+        color: #fbbf24;
+    }
+
+    .forgot-password {
+        text-align: right;
+        margin-bottom: 2rem;
+    }
+
+    .forgot-password a {
+        color: rgba(251, 191, 36, 0.8);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+
+    .forgot-password a:hover {
+        color: #fbbf24;
+    }
+
+    .enter-button {
+        width: 100%;
+        padding: 1rem;
+        background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        color: #000000;
+        border: none;
+        border-radius: 2rem;
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .enter-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+    }
+
+    .airplane-icon {
+        transition: transform 0.3s ease;
+    }
+
+    .enter-button:hover .airplane-icon {
+        transform: translateX(5px);
+    }
+
+    .login-container {
+        background: linear-gradient(135deg, #1a1a1a 0%, #000000 50%, #1a1a1a 100%);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+    }
+
+    .travel-quote {
+        font-family: 'Playfair Display', serif;
+        background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .social-btn {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(251, 191, 36, 0.2);
+        color: #fbbf24;
+        transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+        background: #fbbf24;
+        color: #000000;
+        transform: translateY(-2px);
+    }
+
+    .travel-bg {
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
+                   url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="travel" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23fbbf24" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23travel)"/></svg>');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .logo-placeholder {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #fbbf24, #d97706);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 2rem;
+        box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+        animation: logo-glow 2s ease-in-out infinite alternate;
+    }
+
+    .floating-elements {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .floating-plane {
+        position: absolute;
+        color: rgba(251, 191, 36, 0.1);
+        animation: float-plane 15s linear infinite;
+    }
+
+    /* Paper Airplane Animation */
+    .paper-airplane {
+        position: fixed;
+        width: 30px;
+        height: 30px;
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        color: #fbbf24;
+    }
+
+    .paper-airplane.flying {
+        opacity: 1;
+        animation: flyAcrossScreen 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    }
+
+    .success-message {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        color: #000000;
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        font-weight: 600;
+        z-index: 10000;
+        opacity: 0;
+        scale: 0.8;
+        transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .success-message.show {
+        opacity: 1;
+        scale: 1;
+    }
+
+    /* Enhanced Form Components for Login */
+    .form-input {
+        @apply bg-black/50 border-amber-400/30 text-amber-100 placeholder-amber-400/50 focus:border-amber-400 focus:ring-amber-400 rounded-lg shadow-lg transition-all duration-300 backdrop-blur-sm;
+        background: transparent !important;
+        border: none !important;
+        border-bottom: 2px solid rgba(251, 191, 36, 0.3) !important;
+        color: #fbbf24 !important;
+        width: 100%;
+        padding: 1rem 1rem 1rem 3rem;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .form-input:focus {
+        outline: none !important;
+        border-bottom-color: #fbbf24 !important;
+        background: rgba(251, 191, 36, 0.1) !important;
+    }
+
+    .form-input::placeholder {
+        color: rgba(251, 191, 36, 0.6) !important;
+    }
+
+    /* Login Button Specific Styles */
+    .btn-login {
+        background: linear-gradient(135deg, #d97706, #f59e0b) !important;
+        color: #000000 !important;
+        border: none !important;
+        font-weight: 600 !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-login:hover {
+        background: linear-gradient(135deg, #f59e0b, #fbbf24) !important;
+        transform: translateY(-2px) scale(1.02) !important;
+        box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3) !important;
+    }
+
+    /* Luxury Travel Button Components */
+    .btn {
+        @apply inline-flex items-center px-6 py-3 border border-transparent rounded-lg font-semibold text-sm tracking-wide focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all duration-500 ease-in-out transform relative overflow-hidden;
+    }
+    
+    .btn::before {
+        content: '';
+        @apply absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 transform -skew-x-12 -translate-x-full transition-all duration-700;
+    }
+    
+    .btn:hover::before {
+        @apply translate-x-full opacity-20;
+    }
+    
+    .btn:hover {
+        @apply scale-105 shadow-2xl;
+    }
+    
+    .btn-luxury {
+        @apply bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 text-black hover:from-amber-300 hover:via-yellow-400 hover:to-amber-500 focus:ring-amber-500 shadow-lg;
+        box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3);
+    }
+    
+    .btn-luxury:hover {
+        box-shadow: 0 15px 40px rgba(251, 191, 36, 0.5);
+    }
+    
+    .btn-dark {
+        @apply bg-black text-amber-400 border-2 border-amber-400 hover:bg-amber-400 hover:text-black focus:ring-amber-500;
+    }
+    
+    .btn-outline-gold {
+        @apply bg-transparent text-amber-400 border-2 border-amber-400 hover:bg-amber-400 hover:text-black focus:ring-amber-500;
+    }
+    
+    /* Luxury Travel Card Components */
+    .card {
+        @apply bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden shadow-2xl rounded-xl border border-amber-400/20 transition-all duration-500 backdrop-blur-sm;
+    }
+    
+    .card:hover {
+        @apply shadow-2xl transform scale-105 border-amber-400/40;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(251, 191, 36, 0.2);
+    }
+    
+    .card-luxury {
+        @apply bg-gradient-to-br from-amber-50 via-yellow-50 to-amber-100 text-black border-2 border-amber-300 shadow-xl;
+    }
+    
+    .card-travel {
+        @apply bg-gradient-to-br from-gray-900 via-black to-gray-800 border border-amber-400/30 shadow-2xl rounded-xl overflow-hidden transition-all duration-500 group;
+        position: relative;
+    }
+    
+    .card-travel::before {
+        content: '';
+        @apply absolute inset-0 bg-gradient-to-br from-amber-400/5 to-transparent opacity-0 transition-opacity duration-500;
+    }
+    
+    .card-travel:hover::before {
+        @apply opacity-100;
+    }
+    
+    .card-destination {
+        @apply bg-gradient-to-br from-black via-gray-900 to-black border border-amber-400/20 rounded-xl overflow-hidden relative;
+        background-image: 
+            radial-gradient(circle at 20% 80%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.05) 0%, transparent 50%);
+    }
+    
+    /* Travel Status Indicators */
+    .status-available {
+        @apply bg-gradient-to-r from-green-400 to-emerald-500 text-black border border-green-300;
+    }
+    
+    .status-booking {
+        @apply bg-gradient-to-r from-amber-400 to-yellow-500 text-black border border-amber-300;
+    }
+    
+    .status-sold-out {
+        @apply bg-gradient-to-r from-red-400 to-pink-500 text-white border border-red-300;
+    }
+    
+    .status-luxury {
+        @apply bg-gradient-to-r from-amber-400 to-yellow-500 text-black border border-amber-300;
+    }
+    
+    .form-select {
+        @apply bg-black/50 border-amber-400/30 text-amber-100 focus:border-amber-400 focus:ring-amber-400 rounded-lg shadow-lg transition-all duration-300;
+    }
+    
+    .form-textarea {
+        @apply bg-black/50 border-amber-400/30 text-amber-100 placeholder-amber-400/50 focus:border-amber-400 focus:ring-amber-400 rounded-lg shadow-lg transition-all duration-300;
+    }
+    
+    /* Travel Badge Components */
+    .badge {
+        @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold transition-all duration-300;
+    }
+    
+    .badge-luxury {
+        @apply bg-gradient-to-r from-amber-400 to-yellow-500 text-black border border-amber-300;
+    }
+    
+    .badge-premium {
+        @apply bg-gradient-to-r from-purple-400 to-pink-500 text-white border border-purple-300;
+    }
+    
+    .badge-standard {
+        @apply bg-gradient-to-r from-blue-400 to-cyan-500 text-white border border-blue-300;
+    }
+    
+    .badge-adventure {
+        @apply bg-gradient-to-r from-green-400 to-emerald-500 text-black border border-green-300;
+    }
+    
+    /* Travel Header Components */
+    .travel-header {
+        @apply bg-gradient-to-r from-black via-gray-900 to-black text-amber-400 shadow-2xl border-b border-amber-400/20;
+    }
+    
+    .luxury-banner {
+        @apply bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 rounded-xl shadow-2xl overflow-hidden relative;
+        background-image: 
+            radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.2) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
+    }
+    
+    /* Icon Containers with Travel Theme */
+    .icon-container-gold {
+        @apply p-4 rounded-full bg-gradient-to-br from-amber-400 to-yellow-600 shadow-xl transition-all duration-500 relative;
+        box-shadow: 0 10px 25px rgba(251, 191, 36, 0.4);
+    }
+    
+    .icon-container-black {
+        @apply p-4 rounded-full bg-gradient-to-br from-gray-800 to-black shadow-xl border-2 border-amber-400/30 transition-all duration-500;
+    }
+    
+    .icon-container-travel {
+        @apply p-4 rounded-full bg-gradient-to-br from-blue-500 to-cyan-600 shadow-xl transition-all duration-500;
+        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+    }
+    
+    .icon-container-adventure {
+        @apply p-4 rounded-full bg-gradient-to-br from-green-500 to-emerald-600 shadow-xl transition-all duration-500;
+        box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+    }
+    
+    .group:hover .icon-container-gold,
+    .group:hover .icon-container-black,
+    .group:hover .icon-container-travel,
+    .group:hover .icon-container-adventure {
+        @apply scale-110 rotate-12;
+    }
+    
+    /* Travel Action Cards */
+    .action-card {
+        @apply w-full flex items-center p-6 rounded-xl transition-all duration-500 transform relative overflow-hidden;
+    }
+    
+    .action-card-luxury {
+        @apply bg-gradient-to-r from-amber-400 to-yellow-500 text-black shadow-xl;
+        box-shadow: 0 15px 35px rgba(251, 191, 36, 0.3);
+    }
+    
+    .action-card-dark {
+        @apply bg-gradient-to-r from-gray-900 to-black text-amber-400 border-2 border-amber-400/30 shadow-xl;
+    }
+    
+    .action-card:hover {
+        @apply scale-105 shadow-2xl;
+    }
+    
+    .action-card-luxury:hover {
+        box-shadow: 0 20px 45px rgba(251, 191, 36, 0.5);
+    }
+    
+    /* Travel Navigation */
+    .nav-travel {
+        @apply bg-gradient-to-r from-black via-gray-900 to-black border-b border-amber-400/20 shadow-2xl backdrop-blur-sm;
+    }
+    
+    .nav-logo-travel {
+        @apply flex items-center text-2xl font-bold;
+        font-family: 'Playfair Display', serif;
+        background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    /* Travel Typography */
+    .heading-luxury {
+        font-family: 'Playfair Display', serif;
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600;
+    }
+    
+    .text-gold {
+        @apply text-amber-400;
+    }
+    
+    .text-luxury {
+        @apply text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-500;
+    }
+}
+
+@layer utilities {
+    /* Travel-specific gradient utilities */
+    .bg-travel-gradient {
+        background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    }
+    
+    .bg-luxury-gradient {
+        background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+    }
+    
+    .bg-adventure-gradient {
+        background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+    }
+    
+    .bg-ocean-gradient {
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #1e40af 100%);
+    }
+    
+    .text-gradient-travel {
+        @apply bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent;
+    }
+    
+    .text-gradient-ocean {
+        @apply bg-gradient-to-r from-blue-400 via-cyan-500 to-blue-600 bg-clip-text text-transparent;
+    }
+    
+    .text-gradient-adventure {
+        @apply bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 bg-clip-text text-transparent;
+    }
+    
+    /* Travel Animation Utilities */
+    .float-travel {
+        animation: float-travel 4s ease-in-out infinite;
+    }
+    
+    .pulse-gold {
+        animation: pulse-gold 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    
+    .glow-gold {
+        box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+        animation: glow-gold 3s ease-in-out infinite alternate;
+    }
+    
+    .rotate-slow {
+        animation: rotate-slow 20s linear infinite;
+    }
+    
+    .plane-fly {
+        animation: plane-fly 15s ease-in-out infinite;
+    }
+    
+    .wave-animation {
+        animation: wave-animation 3s ease-in-out infinite;
+    }
+}
+
+/* Login & Authentication Specific Animations */
+@keyframes logo-glow {
+    from { box-shadow: 0 10px 30px rgba(251, 191, 36, 0.3); }
+    to { box-shadow: 0 15px 40px rgba(251, 191, 36, 0.6); }
+}
+
+@keyframes float-plane {
+    0% {
+        transform: translateX(-100px) translateY(0px);
+    }
+    100% {
+        transform: translateX(calc(100vw + 100px)) translateY(-50px);
+    }
+}
+
+@keyframes flyAcrossScreen {
+    0% {
+        transform: translate(-50px, 0) rotate(0deg) scale(0.5);
+    }
+    25% {
+        transform: translate(200px, -100px) rotate(15deg) scale(0.8);
+    }
+    50% {
+        transform: translate(500px, -150px) rotate(25deg) scale(1);
+    }
+    75% {
+        transform: translate(800px, -100px) rotate(35deg) scale(1.2);
+    }
+    100% {
+        transform: translate(1200px, -50px) rotate(45deg) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Travel & Tourism Animations */
+@keyframes float-travel {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px);
+    }
+    25% {
+        transform: translateY(-10px) translateX(5px);
+    }
+    50% {
+        transform: translateY(-5px) translateX(-3px);
+    }
+    75% {
+        transform: translateY(-15px) translateX(2px);
+    }
+}
+
+@keyframes pulse-gold {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 0 20px rgba(251, 191, 36, 0);
+    }
+}
+
+@keyframes glow-gold {
+    from {
+        box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+    }
+    to {
+        box-shadow: 0 0 50px rgba(251, 191, 36, 0.8);
+    }
+}
+
+@keyframes rotate-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes plane-fly {
+    0% {
+        transform: translateX(-100px) translateY(0px);
+    }
+    25% {
+        transform: translateX(0px) translateY(-20px);
+    }
+    50% {
+        transform: translateX(100px) translateY(-10px);
+    }
+    75% {
+        transform: translateX(200px) translateY(-30px);
+    }
+    100% {
+        transform: translateX(300px) translateY(-15px);
+    }
+}
+
+@keyframes wave-animation {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.2);
+    }
+}
+
+@keyframes shimmer-gold {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: calc(200px + 100%) 0;
+    }
+}
+
+@keyframes travel-slideIn {
+    from {
+        transform: translateX(100%) rotate(10deg);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes luxury-fadeIn {
+    from {
+        transform: translateY(50px) scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animation Classes */
+.travel-slideIn {
+    animation: travel-slideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.luxury-fadeIn {
+    animation: luxury-fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.shimmer-gold {
+    background: linear-gradient(90deg, #d97706 25%, #fbbf24 50%, #d97706 75%);
+    background-size: 200px 100%;
+    animation: shimmer-gold 2s infinite;
+}
+
+/* Enhanced Loading Spinner for Travel Theme */
+.spinner-travel {
+    border: 4px solid #1a1a1a;
+    border-top: 4px solid #fbbf24;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1.5s ease-in-out infinite;
+}
+
+.spinner-luxury {
+    border: 4px solid rgba(251, 191, 36, 0.2);
+    border-top: 4px solid #fbbf24;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1.2s linear infinite;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Travel Toast Notifications */
+.toast {
+    @apply fixed top-4 right-4 z-50 max-w-sm w-full bg-gradient-to-br from-gray-900 to-black shadow-2xl rounded-lg pointer-events-auto border border-amber-400/30;
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.toast.show {
+    transform: translateX(0);
+}
+
+.toast-booking {
+    @apply border-l-4 border-amber-400 bg-gradient-to-r from-amber-400/10 to-transparent;
+}
+
+.toast-confirmation {
+    @apply border-l-4 border-green-400 bg-gradient-to-r from-green-400/10 to-transparent;
+}
+
+.toast-alert {
+    @apply border-l-4 border-red-400 bg-gradient-to-r from-red-400/10 to-transparent;
+}
+
+/* Custom Scrollbar for Travel Theme */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: linear-gradient(135deg, #1a1a1a, #000);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+/* Travel Dashboard Specific Styles */
+.travel-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.destination-card {
+    @apply relative overflow-hidden rounded-xl bg-gradient-to-br from-black to-gray-900 border border-amber-400/20 transition-all duration-500;
+    background-image: 
+        radial-gradient(circle at 30% 70%, rgba(251, 191, 36, 0.1) 0%, transparent 60%),
+        radial-gradient(circle at 70% 30%, rgba(59, 130, 246, 0.05) 0%, transparent 60%);
+}
+
+.destination-card:hover {
+    @apply scale-105 border-amber-400/40 shadow-2xl;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(251, 191, 36, 0.2);
+}
+
+.booking-card {
+    @apply bg-gradient-to-br from-amber-400 to-yellow-600 text-black rounded-xl shadow-xl transition-all duration-500;
+}
+
+.booking-card:hover {
+    @apply scale-105 shadow-2xl;
+    box-shadow: 0 20px 40px rgba(251, 191, 36, 0.4);
+}
+
+/* Background Patterns for Travel Theme */
+.travel-pattern {
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(251, 191, 36, 0.1) 0%, transparent 25%),
+        radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.05) 0%, transparent 25%),
+        linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 26, 26, 0.95) 100%);
+}
+
+/* Error Messages and Validation Styles */
+.text-red-400 {
+    background: rgba(239, 68, 68, 0.1) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    border-radius: 0.5rem !important;
+    padding: 0.5rem !important;
+    margin-top: 0.5rem !important;
+    color: #f87171 !important;
+}
+
+/* Session Status Styling */
+.session-status {
+    background: rgba(34, 197, 94, 0.1) !important;
+    border: 1px solid rgba(34, 197, 94, 0.3) !important;
+    border-radius: 0.5rem !important;
+    padding: 0.75rem !important;
+    color: #4ade80 !important;
+}
+
+/* Accessibility & Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    .luxury-banner {
+        background: #fbbf24 !important;
+        color: #000 !important;
+    }
+    
+    .card {
+        background: #fff !important;
+        color: #000 !important;
+        border: 2px solid #fbbf24 !important;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    /* Light mode overrides for travel theme */
+    body {
+        background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 50%, #f59e0b 100%);
+    }
+}
+
+@media (prefers-contrast: high) {
+    .card {
+        @apply border-4 border-amber-400;
+    }
+    
+    .btn {
+        @apply border-2 border-amber-400;
+    }
+}
+
+/* Login Page Responsive Design */
+@media (max-width: 768px) {
+    .login-card {
+        flex-direction: column;
+        min-height: auto;
+        margin: 1rem;
+    }
+    
+    .logo-panel {
+        min-height: 200px;
+        padding: 2rem;
+    }
+    
+    .quote-text {
+        font-size: 1.6rem;
+    }
+    
+    .login-panel {
+        padding: 2rem;
+    }
+    
+    .company-title {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .float-travel,
+    .pulse-gold,
+    .glow-gold,
+    .plane-fly,
+    .logo-glow,
+    .float-plane,
+    .flyAcrossScreen {
+        animation: none !important;
+    }
+}
+
+/* Focus Styles for Travel Theme */
+.btn:focus,
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: 3px solid rgba(251, 191, 36, 0.6);
+    outline-offset: 3px;
+}
+
+.travel-focus:focus {
+    outline: 4px solid rgba(251, 191, 36, 0.7);
+    outline-offset: 4px;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+}
