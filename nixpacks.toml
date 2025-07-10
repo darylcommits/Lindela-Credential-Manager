@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ['nodejs_18', 'nodePackages.npm', 'php81', 'php81Packages.composer']
+nixPkgs = ['nodejs-20_x', 'nodePackages.npm', 'php81', 'php81Packages.composer']
 
 [phases.install]
 cmds = ['npm ci', 'composer install --no-dev --optimize-autoloader']
