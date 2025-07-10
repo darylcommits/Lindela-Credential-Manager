@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ['nodejs', 'npm', 'php81', 'php81Packages.composer']
+nixPkgs = ['nodejs_18', 'nodePackages.npm', 'php81', 'php81Packages.composer']
 
 [phases.install]
 cmds = ['npm ci', 'composer install --no-dev --optimize-autoloader']
@@ -8,11 +8,7 @@ cmds = ['npm ci', 'composer install --no-dev --optimize-autoloader']
 cmds = ['npm run build']
 
 [phases.deploy]
-cmds = [
-    'php artisan config:cache',
-    'php artisan route:cache', 
-    'php artisan view:cache'
-]
+cmds = ['php artisan config:cache', 'php artisan route:cache', 'php artisan view:cache']
 
 [start]
 cmd = 'php -S 0.0.0.0:$PORT -t public/'
